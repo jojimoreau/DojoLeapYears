@@ -2,6 +2,7 @@ package eu.jojimoreau.kata.leapyears;
 
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
@@ -16,6 +17,22 @@ public class KataCheckerMain extends AppCompatActivity {
         final Button checkButton = findViewById(R.id.checkButton);
         final EditText yearInput = findViewById(R.id.yearInput);
         final TextView resultLabel = findViewById(R.id.resultLabel);
+
+        checkButton.setOnClickListener(new View.OnClickListener() {
+            public void onClick(View v) {
+                String year = yearInput.getText().toString();
+                boolean leapYear = leapCheck(Integer.parseInt(year));
+
+                String resultText = "";
+                if(leapYear){
+                    resultText = "You can enjoy the 29th of February in " + year + ".";
+                }
+                else{
+                    resultText = "Your holiday will be 1 day shorter than expected in " + year + ".";
+                }
+                resultLabel.setText(resultText);
+            }
+        });
     }
 
     protected boolean leapCheck(int year){
