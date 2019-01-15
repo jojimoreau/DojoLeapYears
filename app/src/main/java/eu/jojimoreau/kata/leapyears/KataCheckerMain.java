@@ -2,6 +2,9 @@ package eu.jojimoreau.kata.leapyears;
 
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.widget.Button;
+import android.widget.EditText;
+import android.widget.TextView;
 
 public class KataCheckerMain extends AppCompatActivity {
 
@@ -9,6 +12,10 @@ public class KataCheckerMain extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_kata_checker_main);
+
+        final Button checkButton = findViewById(R.id.checkButton);
+        final EditText yearInput = findViewById(R.id.yearInput);
+        final TextView resultLabel = findViewById(R.id.resultLabel);
     }
 
     protected boolean leapCheck(int year){
