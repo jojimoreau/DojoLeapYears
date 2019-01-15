@@ -21,15 +21,21 @@ public class KataCheckerMain extends AppCompatActivity {
         checkButton.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
                 String year = yearInput.getText().toString();
-                boolean leapYear = leapCheck(Integer.parseInt(year));
-
+                boolean leapYear;
                 String resultText;
-                if(leapYear){
-                    resultText = "You can enjoy the 29th of February in " + year + ".";
+
+                try {
+                    leapYear = leapCheck(Integer.parseInt(year));
+                    if(leapYear){
+                        resultText = "You can enjoy the 29th of February in " + year + ".";
+                    }
+                    else{
+                        resultText = "Your holiday will be 1 day shorter than expected in " + year + ".";
+                    }
+                } catch (NumberFormatException e) {
+                    resultText = "The year you entered is too big, please chose something closer to your planned holiday.";
                 }
-                else{
-                    resultText = "Your holiday will be 1 day shorter than expected in " + year + ".";
-                }
+
                 resultLabel.setText(resultText);
             }
         });
