@@ -10,4 +10,8 @@ public class KataCheckerMain extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_kata_checker_main);
     }
+
+    protected boolean leapCheck(int year){
+        return true;
+    }
 }
