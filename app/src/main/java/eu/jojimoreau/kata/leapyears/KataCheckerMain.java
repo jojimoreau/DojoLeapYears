@@ -23,7 +23,7 @@ public class KataCheckerMain extends AppCompatActivity {
                 String year = yearInput.getText().toString();
                 boolean leapYear = leapCheck(Integer.parseInt(year));
 
-                String resultText = "";
+                String resultText;
                 if(leapYear){
                     resultText = "You can enjoy the 29th of February in " + year + ".";
                 }
