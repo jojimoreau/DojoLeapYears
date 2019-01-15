@@ -30,10 +30,12 @@ public class KataCheckerMain extends AppCompatActivity {
                         resultText = "You can enjoy the 29th of February in " + year + ".";
                     }
                     else{
-                        resultText = "Your holiday will be 1 day shorter than expected in " + year + ".";
+                        resultText = "Your holiday will be 1 day shorter than expected in " + year + ", since there is no 29th of February.";
                     }
+                    resultLabel.setTextColor(getColor(R.color.textColorPrimary));
                 } catch (NumberFormatException e) {
                     resultText = "The year you entered is too big, please chose something closer to your planned holiday.";
+                    resultLabel.setTextColor(getColor(R.color.textColorError));
                 }
 
                 resultLabel.setText(resultText);

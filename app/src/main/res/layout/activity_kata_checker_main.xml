@@ -13,6 +13,7 @@
         android:layout_marginTop="50dp"
         android:ems="10"
         android:inputType="number"
+        android:maxLength="12"
         android:textAlignment="center"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.502"
@@ -42,6 +43,7 @@
         android:paddingRight="15dp"
         android:text="Check if you can can plan for an extra day on February 29th during a specific year."
         android:textAlignment="center"
+        android:textColor="@color/textColorPrimary"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
